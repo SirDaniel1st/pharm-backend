@@ -1,0 +1,7 @@
+{
+    "SQLALCHEMY_DATABASE_URI" :"postgres://arxscbpinkhanm:2dd01650b385354915d52822413ca47973bf41c17b37877d85793643031befaf@ec2-3-213-76-170.compute-1.amazonaws.com:5432/dfpa1j6r3ggr7a",
+    "SECRET_KEY" : "123",
+    "JWT_EXPIRATION_DELTA" : 100,
+    "DEBUG": true,
+    "ENV" : "staging"
+}
