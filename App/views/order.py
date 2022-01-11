@@ -1,5 +1,6 @@
 from flask import Blueprint, redirect, render_template, request, abort, jsonify
 from flask_jwt import jwt_required, current_identity
+from flask_cors import CORS
 import json
 
 order_views = Blueprint('order_views', __name__, template_folder='../templates')
@@ -50,7 +51,9 @@ def create_order():
         orderProductList.append(newOrderProduct)
 
     add_order_products(newOrder, orderProductList)
-    return jsonify(newOrder.toDict())
+    response = jsonify(newOrder.toDict())
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 # get specific order by ID
 @order_views.route('/order', methods=["GET"])
