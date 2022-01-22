@@ -51,9 +51,7 @@ def create_order():
         orderProductList.append(newOrderProduct)
 
     add_order_products(newOrder, orderProductList)
-    response = jsonify(newOrder.toDict())
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    return response
+    return jsonify(newOrder.toDict())
 
 # get specific order by ID
 @order_views.route('/order', methods=["GET"])

@@ -5,6 +5,7 @@ from datetime import datetime
 class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    item_count = db.Column(db.Integer, nullable=False)
     user = db.relationship("User", back_populates="orders")
     date_placed = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     pickup_status = db.Column(db.String(50), nullable=False)
