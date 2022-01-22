@@ -19,7 +19,7 @@ manager.add_command('db', MigrateCommand)
 
 @manager.command
 def addAdmin():
-    admin = create_user("Andhra", "Maraj", "andhra.maraj@gmail.com", "andhrapass", None, role = 2)
+    admin = create_user("UWI", "Admin", "Admin", "123", None, role = 2)
     return admin
 
 @manager.command
