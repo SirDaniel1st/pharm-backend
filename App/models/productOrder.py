@@ -17,7 +17,7 @@ class ProductOrder(db.Model):
     product_id = db.Column(db.Integer, db.ForeignKey('product.id'))
     product = db.relationship("Product", back_populates="orders")
     order = db.relationship("Order", back_populates="products")
-    quantity = db.Column(db.Integer, nullable = False)
+    quantity = db.Column(db.Integer)
     status = db.Column(db.Enum(OrderStatus))
     #prices may change, this is the price of the product at the time of order confirmation
     current_price = db.Column(db.Float, nullable = False)
